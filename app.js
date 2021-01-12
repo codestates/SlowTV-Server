@@ -47,5 +47,5 @@ app.use("/", router);
         app
     //)
     .listen(80, () => {
-        console.log("server on 5000");
+        console.log("server on 80");
     });
