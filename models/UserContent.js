@@ -2,6 +2,7 @@ const Sequelize = require('sequelize');
 module.exports = function(sequelize, DataTypes) {
   return sequelize.define('UserContent', {
     id: {
+      autoIncrement: true,
       type: DataTypes.INTEGER,
       allowNull: false,
       primaryKey: true
@@ -9,7 +10,6 @@ module.exports = function(sequelize, DataTypes) {
     User_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
       references: {
         model: 'User',
         key: 'id'
@@ -18,7 +18,6 @@ module.exports = function(sequelize, DataTypes) {
     Content_id: {
       type: DataTypes.INTEGER,
       allowNull: false,
-      primaryKey: true,
       references: {
         model: 'Content',
         key: 'id'
@@ -35,8 +34,6 @@ module.exports = function(sequelize, DataTypes) {
         using: "BTREE",
         fields: [
           { name: "id" },
-          { name: "User_id" },
-          { name: "Content_id" },
         ]
       },
       {
