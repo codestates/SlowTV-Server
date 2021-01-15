@@ -2,14 +2,14 @@ const express = require("express");
 const router = express.Router();
 
 const {
-    favorite,
-    addfavorite,
-    deletefavorite,
-    signup,
-    login,
-    callback,
-    logout,
-    water
+  favorite,
+  addfavorite,
+  deletefavorite,
+  signup,
+  login,
+  callback,
+  logout,
+  water,
 } = require("../controllers");
 
 // // * GET /water
@@ -25,13 +25,13 @@ const {
 // router.get("/favorite", favorite.get);
 
 // // * POST /signup
-// router.post("/signup", signup.post);
+router.post("/signup", signup.post);
 
 // // * POST /login
-// router.post("/login", login.post);
+router.post("/login", login.post);
 
 // // * POST /logout
-// router.post("/logout", logout.post);
+router.post("/logout", logout.post);
 
 // // * POST /callback Authorization
 // router.post("/callback", callback.post);

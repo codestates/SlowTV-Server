@@ -1,24 +1,34 @@
 var DataTypes = require("sequelize").DataTypes;
-var _Content = require("./Content");
-var _User = require("./User");
-var _UserContent = require("./UserContent");
+var _Categories = require("./Categories");
+var _Contents = require("./Contents");
+var _Users = require("./Users");
+var _UsersCategories = require("./UsersCategories");
+var _UsersContents = require("./UsersContents");
 
 function initModels(sequelize) {
-  var Content = _Content(sequelize, DataTypes);
-  var User = _User(sequelize, DataTypes);
-  var UserContent = _UserContent(sequelize, DataTypes);
+  var Categories = _Categories(sequelize, DataTypes);
+  var Contents = _Contents(sequelize, DataTypes);
+  var Users = _Users(sequelize, DataTypes);
+  var UsersCategories = _UsersCategories(sequelize, DataTypes);
+  var UsersContents = _UsersContents(sequelize, DataTypes);
 
-  User.belongsToMany(Content, { through: UserContent, foreignKey: "User_id", otherKey: "Content_id" });
-  Content.belongsToMany(User, { through: UserContent, foreignKey: "Content_id", otherKey: "User_id" });
-  UserContent.belongsTo(Content, { foreignKey: "Content_id"});
-  Content.hasMany(UserContent, { foreignKey: "Content_id"});
-  UserContent.belongsTo(User, { foreignKey: "User_id"});
-  User.hasMany(UserContent, { foreignKey: "User_id"});
+  Contents.belongsTo(Categories, { foreignKey: "Categories_id" });
+  Categories.hasMany(Contents, { foreignKey: "Categories_id" });
+  UsersCategories.belongsTo(Categories, { foreignKey: "Categories_id" });
+  Categories.hasMany(UsersCategories, { foreignKey: "Categories_id" });
+  UsersCategories.belongsTo(Users, { foreignKey: "Users_id" });
+  Users.hasMany(UsersCategories, { foreignKey: "Users_id" });
+  UsersContents.belongsTo(Contents, { foreignKey: "Content_id" });
+  Contents.hasMany(UsersContents, { foreignKey: "Content_id" });
+  UsersContents.belongsTo(Users, { foreignKey: "User_id" });
+  Users.hasMany(UsersContents, { foreignKey: "User_id" });
 
   return {
-    Content,
-    User,
-    UserContent,
+    Categories,
+    Contents,
+    Users,
+    UsersCategories,
+    UsersContents,
   };
 }
 module.exports = initModels;
