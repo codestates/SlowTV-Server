@@ -1,12 +1,12 @@
-const { User } = require("../models");
+const { Users } = require("../models");
 
 module.exports = {
   post: async (req, res) => {
     const { nickname, email, password } = req.body;
 
-    const [user, created] = await User.findOrCreate({
+    const [user, created] = await Users.findOrCreate({
       where: {
-        nickname: nickname,
+        email: email,
       },
       defaults: {
         nickname,
@@ -21,8 +21,8 @@ module.exports = {
       });
     } else {
       res.status(201).json({
-        nickname: nickname,
-        email: email,
+        nickname: user.nickname,
+        email: user.email,
       });
     }
   },
