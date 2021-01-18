@@ -12,16 +12,16 @@ function initModels(sequelize) {
   var UsersCategories = _UsersCategories(sequelize, DataTypes);
   var UsersContents = _UsersContents(sequelize, DataTypes);
 
-  Contents.belongsTo(Categories, { foreignKey: "Categories_id" });
-  Categories.hasMany(Contents, { foreignKey: "Categories_id" });
-  UsersCategories.belongsTo(Categories, { foreignKey: "Categories_id" });
-  Categories.hasMany(UsersCategories, { foreignKey: "Categories_id" });
-  UsersCategories.belongsTo(Users, { foreignKey: "Users_id" });
-  Users.hasMany(UsersCategories, { foreignKey: "Users_id" });
-  UsersContents.belongsTo(Contents, { foreignKey: "Content_id" });
-  Contents.hasMany(UsersContents, { foreignKey: "Content_id" });
-  UsersContents.belongsTo(Users, { foreignKey: "User_id" });
-  Users.hasMany(UsersContents, { foreignKey: "User_id" });
+  Contents.belongsTo(Categories, { foreignKey: "Categories_id"});
+  Categories.hasMany(Contents, { foreignKey: "Categories_id"});
+  UsersCategories.belongsTo(Categories, { foreignKey: "Categories_id"});
+  Categories.hasMany(UsersCategories, { foreignKey: "Categories_id"});
+  UsersCategories.belongsTo(Users, { foreignKey: "Users_id"});
+  Users.hasMany(UsersCategories, { foreignKey: "Users_id"});
+  UsersContents.belongsTo(Contents, { foreignKey: "Content_id"});
+  Contents.hasMany(UsersContents, { foreignKey: "Content_id"});
+  UsersContents.belongsTo(Users, { foreignKey: "User_id"});
+  Users.hasMany(UsersContents, { foreignKey: "User_id"});
 
   return {
     Categories,
