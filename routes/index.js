@@ -36,4 +36,7 @@ router.post("/logout", logout.post);
 // // * POST /callback Authorization
 // router.post("/callback", callback.post);
 
+// * POST /callback Authorization
+router.post("/callbackgit", callbackgit.post);
+
 module.exports = router;
