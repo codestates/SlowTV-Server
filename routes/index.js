@@ -10,6 +10,7 @@ const {
   callbackgit,
   logout,
   category,
+  editprofile
 } = require("../controllers");
 
 // * GET /category
@@ -38,5 +39,8 @@ router.post("/logout", logout.post);
 
 // * POST /callback Authorization
 router.post("/callbackgit", callbackgit.post);
+
+// * POST /editprofile
+router.post("/editprofile", editprofile.post);
 
 module.exports = router;
