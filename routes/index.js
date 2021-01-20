@@ -7,22 +7,22 @@ const {
   deletefavorite,
   signup,
   login,
-  callback,
+  callbackgit,
   logout,
-  water,
+  category,
 } = require("../controllers");
 
-// // * GET /water
-// router.get("/water", water.get);
+// * GET /category
+router.get("/category/:name", category.get);
 
-// // * POST /deletefavorite
-// router.post("/deletefavorite", deletefavorite.post);
+// * POST /deletefavorite
+router.post("/deletefavorite", deletefavorite.post);
 
-// // * POST /addfavorite
-// router.post("/addfavorite", addfavorite.post);
+// * POST /addfavorite
+router.post("/addfavorite", addfavorite.post);
 
-// // * GET /favorite
-// router.get("/favorite", favorite.get);
+// * GET /favorite
+router.get("/favorite", favorite.get);
 
 // // * POST /signup
 router.post("/signup", signup.post);

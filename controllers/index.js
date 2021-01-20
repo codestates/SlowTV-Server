@@ -7,5 +7,5 @@ module.exports = {
     callback: require("./callback"),
     callbackgit: require("./callbackgit"),
     logout: require("./logout"),
-    water: require("./water"),
+    category: require("./category"),
 };
