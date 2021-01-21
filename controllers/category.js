@@ -15,7 +15,7 @@ module.exports = {
         } else {
 
             const contentInfo = await Contents.findAll({
-                attributes: ["contentname", "contentlink", "thumbnail"],
+                attributes: ["id","contentname", "contentlink", "thumbnail"],
                 where: { Categories_id: categoryInfo.id }
             })
             let contents = contentInfo.map(el => el.dataValues)

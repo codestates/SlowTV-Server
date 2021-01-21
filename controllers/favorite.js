@@ -28,7 +28,7 @@ module.exports = {
 
                 // 제목, 링크, 카테고리  찾아서 보내주기
                 const contentInfo = await Contents.findAll({
-                    attributes: ["contentname", "contentlink", "Categories_id", "thumbnail"],
+                    attributes: ["id","contentname", "contentlink", "Categories_id", "thumbnail"],
                     where: {
                         id: { [Op.or]: contentIdArr }
                     }
