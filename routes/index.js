@@ -11,11 +11,15 @@ const {
   logout,
   category,
   editprofile,
-  callbackgoogle
+  callbackgoogle,
+  userinfo
 } = require("../controllers");
 
 // * GET /category
 router.get("/category/:name", category.get);
+
+// * GET /category
+router.get("/userinfo", userinfo.get);
 
 // * POST /deletefavorite
 router.post("/deletefavorite", deletefavorite.post);
