@@ -8,5 +8,6 @@ module.exports = {
     logout: require("./logout"),
     category: require("./category"),
     editprofile: require("./editprofile"),
-    callbackgoogle: require("./callbackgoogle")
+    callbackgoogle: require("./callbackgoogle"),
+    userinfo: require("./userinfo")
 };
