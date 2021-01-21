@@ -7,5 +7,6 @@ module.exports = {
     callbackgit: require("./callbackgit"),
     logout: require("./logout"),
     category: require("./category"),
-    editprofile: require("./editprofile")
+    editprofile: require("./editprofile"),
+    callbackgoogle: require("./callbackgoogle")
 };
