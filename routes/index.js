@@ -10,7 +10,8 @@ const {
   callbackgit,
   logout,
   category,
-  editprofile
+  editprofile,
+  callbackgoogle
 } = require("../controllers");
 
 // * GET /category
@@ -34,8 +35,8 @@ router.post("/login", login.post);
 // // * POST /logout
 router.post("/logout", logout.post);
 
-// // * POST /callback Authorization
-// router.post("/callback", callback.post);
+// * POST /callback Authorization
+router.post("/callbackgoogle", callbackgoogle.post);
 
 // * POST /callback Authorization
 router.post("/callbackgit", callbackgit.post);
