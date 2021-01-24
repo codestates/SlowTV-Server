@@ -1,5 +1,5 @@
 module.exports = {
-    favorite: require("./favorite"),
+    favorites: require("./favorites"),
     addfavorite: require("./addfavorite"),
     deletefavorite: require("./deletefavorite"),
     signup: require("./signup"),
@@ -9,5 +9,6 @@ module.exports = {
     category: require("./category"),
     editprofile: require("./editprofile"),
     callbackgoogle: require("./callbackgoogle"),
-    userinfo: require("./userinfo")
+    userinfo: require("./userinfo"),
+    sociallogin: require("./sociallogin")
 };

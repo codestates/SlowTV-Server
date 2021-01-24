@@ -3,7 +3,7 @@ require("dotenv").config();
 
 const client_id = process.env.GOOGLE_CLIENT_ID;
 const client_secret = process.env.GOOGLE_CLIENT_SECRET;
-const redirect_uri='https://www.slowtv24.com'
+const redirect_uri='https://localhost:3000/login'
 const grant_type='authorization_code'
 
 module.exports = {
