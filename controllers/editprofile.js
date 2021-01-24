@@ -3,7 +3,7 @@ module.exports = {
     post: async (req, res) => {
 
         const userId = req.session.userId;
-        const { nickname, email, password } = req.body;
+        const { nickname, email, prevPassword, newPassword } = req.body;
 
         if (!userId) {
             res.status(404).json({ message: "Not authorized" });
@@ -23,13 +23,26 @@ module.exports = {
                 )
             }
 
-            if (password) {
+            if (prevPassword) {
+                const verificationPW = await Users.findOne({
+                    where: {
+                        id: userId,
+                        password:prevPassword
+                    }
+                })
+                //기존 password 가 존재하는 경우 
+                if(verificationPW) {
+            if (newPassword) {
                 const pwUp = await Users.update(
-                    { password: password },
+                    { password: newPassword },
                     { where: { id: userId } },
                 )
             }
-            
+        } else {
+            res.status(400).json({ message: "The password is incorrect."})
+            return;
+        }
+        }
             const userupdateInfo = await Users.findOne({
                 attributes: ["nickname","email"],
                 where: {id: userId}

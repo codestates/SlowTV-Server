@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 
 const {
-  favorite,
+  favorites,
   addfavorite,
   deletefavorite,
   signup,
@@ -28,7 +28,7 @@ router.post("/deletefavorite", deletefavorite.post);
 router.post("/addfavorite", addfavorite.post);
 
 // * GET /favorite
-router.get("/favorite", favorite.get);
+router.get("/favorites", favorites.get);
 
 // // * POST /signup
 router.post("/signup", signup.post);
@@ -47,5 +47,8 @@ router.post("/callbackgit", callbackgit.post);
 
 // * POST /editprofile
 router.post("/editprofile", editprofile.post);
+
+// * POST /sociallogin
+router.post('/sociallogin', sociallogin.post)
 
 module.exports = router;
