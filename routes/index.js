@@ -12,7 +12,8 @@ const {
   category,
   editprofile,
   callbackgoogle,
-  userinfo
+  userinfo,
+  sociallogin
 } = require("../controllers");
 
 // * GET /category
